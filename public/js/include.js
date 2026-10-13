@@ -18,7 +18,7 @@
     const theme = document.documentElement.getAttribute('data-theme');
     const useLight = onDark || theme === 'dark';
     const src = useLight && S.logoDark ? S.logoDark : S.logo;
-    return `<img class="brand-logo" src="${src}?v=12" alt="${label}" width="320" height="100">`;
+    return `<img class="brand-logo" src="${src}?v=13" alt="${label}" width="320" height="100">`;
   }
 
   function navLinks() {

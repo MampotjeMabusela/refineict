@@ -79,7 +79,7 @@ describe('API', () => {
     const pricing = await request(app).post('/api/kat').send({ message: 'take me to pricing' });
     assert.equal(pricing.status, 200);
     assert.equal(pricing.body.ok, true);
-    assert.equal(pricing.body.agent, 'Kat');
+    assert.equal(pricing.body.agent, 'Theo');
     assert.ok(pricing.body.reply);
     assert.ok(pricing.body.navigate);
     assert.match(pricing.body.navigate.href, /plans|#pricing|services/i);

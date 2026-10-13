@@ -1,7 +1,7 @@
-/* Kat — smart on-site assistant: answers + navigates */
+/* Theo — smart on-site assistant: answers + navigates */
 (function () {
-  const HISTORY_KEY = 'kat.history.v1';
-  const OPEN_KEY = 'kat.open.v1';
+  const HISTORY_KEY = 'theo.history.v1';
+  const OPEN_KEY = 'theo.open.v1';
   const MAX_HISTORY = 12;
 
   function loadHistory() {
@@ -62,22 +62,22 @@
     const root = document.createElement('div');
     root.id = 'kat-root';
     root.innerHTML = `
-<button type="button" class="kat-launcher" id="kat-launcher" aria-expanded="false" aria-controls="kat-panel" aria-label="Open Kat, site assistant">
-  <span class="kat-launcher-avatar" aria-hidden="true">K</span>
-  <span class="kat-launcher-label">Ask Kat</span>
+<button type="button" class="kat-launcher" id="kat-launcher" aria-expanded="false" aria-controls="kat-panel" aria-label="Open Theo, site assistant">
+  <span class="kat-launcher-avatar" aria-hidden="true">T</span>
+  <span class="kat-launcher-label">Ask Theo</span>
 </button>
 <section class="kat-panel" id="kat-panel" hidden role="dialog" aria-modal="false" aria-labelledby="kat-title">
   <header class="kat-header">
     <div class="kat-header-text">
       <p class="kat-kicker">Refine ICT assistant</p>
-      <h2 id="kat-title">Kat</h2>
+      <h2 id="kat-title">Theo</h2>
     </div>
-    <button type="button" class="kat-close" id="kat-close" aria-label="Close Kat">×</button>
+    <button type="button" class="kat-close" id="kat-close" aria-label="Close Theo">×</button>
   </header>
   <div class="kat-messages" id="kat-messages" aria-live="polite"></div>
   <div class="kat-suggestions" id="kat-suggestions"></div>
   <form class="kat-form" id="kat-form">
-    <label class="visually-hidden" for="kat-input">Message Kat</label>
+    <label class="visually-hidden" for="kat-input">Message Theo</label>
     <input id="kat-input" name="message" type="text" maxlength="800" autocomplete="off" placeholder="Ask about services, or say “go to contact”…" required>
     <button type="submit" class="kat-send" id="kat-send">Send</button>
   </form>
@@ -159,7 +159,7 @@
       addBubble(
         'assistant',
         formatReply(
-          "Hi — I'm **Kat**. Ask me anything about Refine ICT, or tell me where to take you (services, pricing, contact, map, a specific service…)."
+          "Hi — I'm **Theo**. Ask me anything about Refine ICT, or tell me where to take you (services, pricing, contact, map, a specific service…)."
         )
       );
       renderSuggestions(['Show services', 'Pricing plans', 'Contact & quote', 'Office location', 'Cybersecurity']);
@@ -179,7 +179,7 @@
 
       const typing = document.createElement('div');
       typing.className = 'kat-msg kat-msg--assistant';
-      typing.innerHTML = '<div class="kat-bubble kat-typing">Kat is thinking…</div>';
+      typing.innerHTML = '<div class="kat-bubble kat-typing">Theo is thinking…</div>';
       messages.appendChild(typing);
       messages.scrollTop = messages.scrollHeight;
 

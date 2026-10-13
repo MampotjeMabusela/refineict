@@ -1077,7 +1077,7 @@ textarea { min-height: 7rem; resize: vertical; }
   border: 0;
 }
 
-/* Kat — site assistant (left); WhatsApp stays on the right */
+/* Theo — site assistant (left); WhatsApp stays on the right */
 .kat-launcher {
   position: fixed;
   left: max(1rem, env(safe-area-inset-left));

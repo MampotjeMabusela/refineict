@@ -112,7 +112,7 @@ const katLimiter = rateLimit({
   max: 30,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: 'Kat is getting a lot of questions — try again in a moment.' },
+  message: { error: 'Theo is getting a lot of questions — try again in a moment.' },
 });
 
 app.use(express.static(PUBLIC, { extensions: ['html'] }));
@@ -130,7 +130,7 @@ app.post('/api/kat', katLimiter, async (req, res, next) => {
   try {
     const message = String(req.body?.message || '').trim();
     if (!message) {
-      const err = new Error('Please type a message for Kat.');
+      const err = new Error('Please type a message for Theo.');
       err.status = 400;
       throw err;
     }

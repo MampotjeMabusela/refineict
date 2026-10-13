@@ -33,7 +33,7 @@
 
   <g font-family="Sora, 'Segoe UI', system-ui, sans-serif">
     <text x="62" y="28" font-size="22" font-weight="800" letter-spacing="-0.4" fill="#0c1a2e">RefineICT</text>
-    <text x="62" y="46" font-size="12" font-weight="600" letter-spacing="0.8" fill="#2f5bff">Pty (Ltd).</text>
+    <text x="62" y="46" font-size="12" font-weight="600" letter-spacing="0.8" fill="#f0a202">Pty (Ltd).</text>
   </g>
   <rect x="62" y="32" width="28" height="2" rx="1" fill="url(#gold)"/>
 </svg>
