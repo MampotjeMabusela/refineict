@@ -162,10 +162,22 @@ function svgFor(name) {
 const W = 320;
 const H = 240;
 
+function isPlaceholder(filePath) {
+  if (!fs.existsSync(filePath)) return true;
+  // Real photography/artwork is much larger than the tiny generated placeholders.
+  return fs.statSync(filePath).size < 40_000;
+}
+
 async function main() {
   for (const [name, fn] of Object.entries(scenes)) {
-    fs.writeFileSync(path.join(out, `${name}.svg`), svgFor(name));
-    fs.writeFileSync(path.join(out, `${name}.png`), makePng(W, H, fn));
+    const pngPath = path.join(out, `${name}.png`);
+    const svgPath = path.join(out, `${name}.svg`);
+    if (isPlaceholder(pngPath)) {
+      fs.writeFileSync(svgPath, svgFor(name));
+      fs.writeFileSync(pngPath, makePng(W, H, fn));
+    } else {
+      console.log('keep existing', `${name}.png`);
+    }
   }
 
   let sharp;
@@ -177,10 +189,16 @@ async function main() {
 
   if (sharp) {
     for (const name of Object.keys(scenes)) {
-      await sharp(path.join(out, `${name}.png`))
-        .resize(1400, 1050)
+      const pngPath = path.join(out, `${name}.png`);
+      const webpPath = path.join(out, `${name}.webp`);
+      if (!isPlaceholder(webpPath)) {
+        console.log('keep existing', `${name}.webp`);
+        continue;
+      }
+      await sharp(pngPath)
+        .resize(1400, 1050, { fit: 'inside', withoutEnlargement: false })
         .webp({ quality: 80 })
-        .toFile(path.join(out, `${name}.webp`));
+        .toFile(webpPath);
       console.log('wrote', `${name}.webp`);
     }
   } else {

@@ -9,8 +9,7 @@
     "test": "node --test tests/api.test.js",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "images": "node scripts/generate-images.js",
-    "postinstall": "node scripts/generate-images.js || exit 0"
+    "images": "node scripts/generate-images.js"
   },
   "engines": {
     "node": "22.x"
