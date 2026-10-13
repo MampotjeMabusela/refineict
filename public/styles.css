@@ -115,8 +115,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  padding: 0.65rem clamp(0.85rem, 4vw, 4rem);
-  padding-top: max(0.65rem, env(safe-area-inset-top));
+  padding: 0.75rem clamp(0.85rem, 4vw, 4rem);
+  padding-top: max(0.75rem, env(safe-area-inset-top));
   background: var(--logo-plate);
   border-bottom: 1px solid rgba(127, 162, 255, 0.12);
   transition: box-shadow 0.2s;
@@ -135,16 +135,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font: 800 1.25rem Sora, sans-serif;
   color: #fff;
   text-decoration: none;
-  margin: -0.65rem 0;
-  padding: 0.65rem 0;
+  margin: -0.75rem 0;
+  padding: 0.75rem 0;
   background: transparent;
   min-width: 0;
   flex: 1 1 auto;
 }
 .brand img, .brand-logo {
-  height: clamp(48px, 12vw, 72px);
+  height: clamp(60px, 15vw, 96px);
   width: auto;
-  max-width: min(280px, 62vw);
+  max-width: min(360px, 72vw);
   display: block;
   object-fit: contain;
   border-radius: 0;
@@ -153,8 +153,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   mix-blend-mode: lighten;
 }
 .site-footer .brand-logo {
-  height: clamp(56px, 14vw, 84px);
-  max-width: min(300px, 80vw);
+  height: clamp(72px, 17vw, 112px);
+  max-width: min(400px, 88vw);
   background: transparent;
   mix-blend-mode: lighten;
 }
@@ -1000,7 +1000,7 @@ textarea { min-height: 7rem; resize: vertical; }
   .steps { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
   .quotes { grid-template-columns: 1fr; }
-  .brand img, .brand-logo { max-width: min(220px, 58vw); }
+  .brand img, .brand-logo { max-width: min(280px, 68vw); }
   .hero--cinema #h-lead,
   .hero--cinema .hero-text > p:not(.hero-brand) { font-size: 1.05rem; }
   .map-frame,
@@ -1019,7 +1019,7 @@ textarea { min-height: 7rem; resize: vertical; }
 /* Very small devices */
 @media (max-width: 360px) {
   .stats { grid-template-columns: 1fr; }
-  .brand img, .brand-logo { max-width: 52vw; }
+  .brand img, .brand-logo { max-width: 64vw; }
   .btn { padding-left: 1.1rem; padding-right: 1.1rem; }
 }
 

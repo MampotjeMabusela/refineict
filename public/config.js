@@ -60,9 +60,9 @@ window.SITE = {
     faq: {
       src: 'img/faq.webp',
       fallback: 'img/faq.png',
-      w: 1024,
-      h: 559,
-      alt: 'FAQ: We have answers — general information, support and services',
+      w: 1280,
+      h: 878,
+      alt: 'Frequently asked questions — person reviewing FAQ information on a screen',
     },
   },
   nav: [
