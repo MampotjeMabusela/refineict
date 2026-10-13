@@ -258,6 +258,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: block;
   object-fit: cover;
   object-position: center 32%;
+  image-rendering: auto;
 }
 .hero-bg::after {
   content: '';
@@ -416,6 +417,7 @@ a.card:hover { border-color: var(--blue); box-shadow: var(--card-shadow); }
   border-radius: 20px;
   object-fit: contain;
   object-position: center;
+  image-rendering: auto;
   background:
     radial-gradient(circle at 40% 40%, #2f5bff33, transparent 55%),
     var(--ink2);
