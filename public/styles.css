@@ -237,10 +237,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   position: relative;
   display: block;
   min-height: min(92vh, 820px);
+  min-height: min(92dvh, 820px);
   padding: 0;
   background: #02060f;
   overflow: hidden;
   color: #fff;
+  isolation: isolate;
 }
 .hero-bg {
   position: absolute;
@@ -251,9 +253,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero-bg img {
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 32%;
 }
 .hero-bg::after {
   content: '';
@@ -262,6 +266,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background:
     linear-gradient(90deg, rgba(2, 6, 15, 0.82) 0%, rgba(2, 6, 15, 0.55) 42%, rgba(2, 6, 15, 0.2) 70%, rgba(2, 6, 15, 0.45) 100%),
     linear-gradient(180deg, rgba(2, 6, 15, 0.55) 0%, transparent 35%, rgba(2, 6, 15, 0.55) 100%);
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -271,6 +276,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   gap: 2rem;
   align-items: center;
   min-height: min(92vh, 820px);
+  min-height: min(92dvh, 820px);
+  width: 100%;
   padding: clamp(3rem, 8vw, 6.5rem) clamp(1rem, 5vw, 4rem);
 }
 .hero--cinema .hero-text { max-width: 36rem; }
@@ -403,6 +410,7 @@ a.card:hover { border-color: var(--blue); box-shadow: var(--card-shadow); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
 .split img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 20px;
@@ -433,6 +441,7 @@ a.card:hover { border-color: var(--blue); box-shadow: var(--card-shadow); }
 .band p { color: #b9c6e0; }
 .band-media {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
@@ -576,18 +585,24 @@ textarea { min-height: 7rem; resize: vertical; }
 .faq-main { min-width: 0; }
 .faq-media {
   margin: 0;
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: 0 16px 40px rgba(12, 26, 46, 0.12);
   background: var(--ink2);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 .faq-media picture,
 .faq-media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 220px;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 .faq { display: grid; gap: 0.75rem; max-width: none; }
 .faq details {
@@ -674,12 +689,14 @@ textarea { min-height: 7rem; resize: vertical; }
 .page-hero--bg {
   position: relative;
   min-height: min(58vh, 520px);
+  min-height: min(58dvh, 520px);
   padding: 0;
   background: #02060f;
   overflow: hidden;
   color: #fff;
   display: flex;
   align-items: flex-end;
+  isolation: isolate;
 }
 .page-hero-bg {
   position: absolute;
@@ -690,9 +707,11 @@ textarea { min-height: 7rem; resize: vertical; }
 .page-hero-bg img {
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 38%;
 }
 .page-hero-bg::after {
   content: '';
@@ -701,10 +720,12 @@ textarea { min-height: 7rem; resize: vertical; }
   background:
     linear-gradient(90deg, rgba(2, 6, 15, 0.78) 0%, rgba(2, 6, 15, 0.45) 50%, rgba(2, 6, 15, 0.25) 100%),
     linear-gradient(180deg, rgba(2, 6, 15, 0.35) 0%, transparent 40%, rgba(2, 6, 15, 0.75) 100%);
+  pointer-events: none;
 }
 .page-hero--bg .page-hero-inner {
   position: relative;
   z-index: 1;
+  width: 100%;
   padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 4rem);
   max-width: 40rem;
 }
@@ -821,27 +842,64 @@ textarea { min-height: 7rem; resize: vertical; }
 /* Tablets & large phones (landscape + portrait) */
 @media (max-width: 900px) {
   .hero, .split, .contact, .map-sec, .faq-layout, .quotes, .plans, .footer-grid { grid-template-columns: 1fr; }
-  .faq-media { max-width: 36rem; }
+  .faq-media { max-width: none; width: 100%; }
+  .faq-media picture,
+  .faq-media img { min-height: 200px; max-height: 320px; }
   .plans .plan:last-child { grid-column: auto; max-width: none; }
   .hero-content {
     grid-template-columns: 1fr;
     min-height: min(78vh, 640px);
+    min-height: min(78dvh, 640px);
     padding: clamp(2.25rem, 7vw, 4rem) clamp(1rem, 5vw, 2.5rem) clamp(2.5rem, 8vw, 4rem);
     align-items: end;
   }
-  .hero--cinema { min-height: min(78vh, 640px); }
-  .hero-bg img { object-position: center 30%; }
+  .hero--cinema {
+    min-height: min(78vh, 640px);
+    min-height: min(78dvh, 640px);
+  }
+  .hero-bg picture,
+  .hero-bg img {
+    object-fit: cover;
+    object-position: 58% 28%;
+  }
+  .hero-bg::after {
+    background:
+      linear-gradient(180deg, rgba(2, 6, 15, 0.35) 0%, rgba(2, 6, 15, 0.2) 35%, rgba(2, 6, 15, 0.78) 100%),
+      linear-gradient(90deg, rgba(2, 6, 15, 0.72) 0%, rgba(2, 6, 15, 0.35) 55%, rgba(2, 6, 15, 0.45) 100%);
+  }
   .hero-visual--overlay { display: none; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1rem; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .split { gap: 1.75rem; }
+  .split img,
+  .band-media {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+  }
   .split.rev img { order: -1; }
   .contact > *,
   .map-sec-head { max-width: none; }
   .map-frame { min-height: 280px; }
   .map-frame iframe { min-height: 280px; }
-  .page-hero--bg { min-height: min(48vh, 380px); }
-  .page-hero--bg .page-hero-inner { padding: clamp(2rem, 7vw, 3.5rem) clamp(1rem, 5vw, 2.5rem); }
+  .page-hero--bg {
+    min-height: min(52vh, 420px);
+    min-height: min(52dvh, 420px);
+  }
+  .page-hero-bg picture,
+  .page-hero-bg img {
+    object-fit: cover;
+    object-position: 55% 35%;
+  }
+  .page-hero-bg::after {
+    background:
+      linear-gradient(180deg, rgba(2, 6, 15, 0.3) 0%, rgba(2, 6, 15, 0.25) 40%, rgba(2, 6, 15, 0.82) 100%),
+      linear-gradient(90deg, rgba(2, 6, 15, 0.7) 0%, rgba(2, 6, 15, 0.4) 100%);
+  }
+  .page-hero--bg .page-hero-inner {
+    max-width: none;
+    padding: clamp(2rem, 7vw, 3.5rem) clamp(1rem, 5vw, 2.5rem);
+  }
 
   .nav { flex-wrap: nowrap; }
   .nav-toggle { display: flex; flex: 0 0 auto; }
@@ -901,6 +959,32 @@ textarea { min-height: 7rem; resize: vertical; }
   .faq details { padding-right: 0.25rem; }
   .site-footer { padding: 2.25rem clamp(0.9rem, 4vw, 1.25rem) 1.75rem; }
   .footer-copy { font-size: 0.88rem; word-break: break-word; }
+
+  .hero--cinema,
+  .hero-content {
+    min-height: min(86vh, 700px);
+    min-height: min(86svh, 700px);
+  }
+  .hero-bg picture,
+  .hero-bg img {
+    object-position: 62% 30%;
+  }
+  .hero-content {
+    padding-bottom: clamp(2.75rem, 10vw, 4rem);
+  }
+  .page-hero--bg {
+    min-height: min(46vh, 360px);
+    min-height: min(46svh, 360px);
+  }
+  .page-hero-bg picture,
+  .page-hero-bg img {
+    object-position: 60% 32%;
+  }
+  .split img,
+  .band-media,
+  .faq-media {
+    border-radius: 14px;
+  }
 }
 
 /* Small phones */
@@ -914,6 +998,15 @@ textarea { min-height: 7rem; resize: vertical; }
   .hero--cinema .hero-text > p:not(.hero-brand) { font-size: 1.05rem; }
   .map-frame,
   .map-frame iframe { min-height: 240px; }
+  .hero-bg picture,
+  .hero-bg img {
+    object-position: 68% 28%;
+  }
+  .faq-media picture,
+  .faq-media img {
+    min-height: 180px;
+    max-height: 240px;
+  }
 }
 
 /* Very small devices */
@@ -926,12 +1019,29 @@ textarea { min-height: 7rem; resize: vertical; }
 /* Short landscape phones / foldables */
 @media (max-height: 480px) and (orientation: landscape) {
   .hero--cinema,
-  .hero-content { min-height: auto; }
+  .hero-content {
+    min-height: 100vh;
+    min-height: min(100svh, 420px);
+  }
   .hero-content { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .page-hero--bg { min-height: 220px; }
+  .hero-bg picture,
+  .hero-bg img { object-position: center 40%; }
+  .page-hero--bg { min-height: 200px; }
+  .page-hero-bg picture,
+  .page-hero-bg img { object-position: center 42%; }
   .call-bar { display: none; }
   body { padding-bottom: 0; }
   .wa-float { bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+}
+
+/* Large desktops — keep backgrounds edge-to-edge and crisp */
+@media (min-width: 1400px) {
+  .hero-bg picture,
+  .hero-bg img,
+  .page-hero-bg picture,
+  .page-hero-bg img {
+    object-position: center 34%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

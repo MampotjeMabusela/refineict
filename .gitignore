@@ -13,3 +13,5 @@ coverage/
 *.log
 .vscode/
 .idea/
+
+.vercel
