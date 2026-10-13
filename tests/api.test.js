@@ -7,6 +7,7 @@ process.env.SESSION_SECRET = 'test-secret';
 process.env.ADMIN_USER = 'admin';
 process.env.ADMIN_PASSWORD = 'testpass';
 process.env.CORS_ORIGIN = 'http://localhost:3000';
+process.env.KAT_DISABLE_LLM = '1';
 
 const { app } = require('../server');
 
@@ -72,6 +73,25 @@ describe('API', () => {
     assert.equal(res.status, 200);
     assert.equal(res.body.ok, true);
     assert.match(res.body.reference, /^RF-\d{4}-\d{4}$/);
+  });
+
+  it('POST /api/kat answers and can navigate', async () => {
+    const pricing = await request(app).post('/api/kat').send({ message: 'take me to pricing' });
+    assert.equal(pricing.status, 200);
+    assert.equal(pricing.body.ok, true);
+    assert.equal(pricing.body.agent, 'Kat');
+    assert.ok(pricing.body.reply);
+    assert.ok(pricing.body.navigate);
+    assert.match(pricing.body.navigate.href, /plans|#pricing|services/i);
+
+    const about = await request(app).post('/api/kat').send({ message: 'What is your phone number?' });
+    assert.equal(about.status, 200);
+    assert.match(String(about.body.reply), /72 614|hello@refineict|WhatsApp/i);
+  });
+
+  it('POST /api/kat validates empty message', async () => {
+    const res = await request(app).post('/api/kat').send({ message: '   ' });
+    assert.equal(res.status, 400);
   });
 
   it('admin login and lead list', async () => {

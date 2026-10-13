@@ -13,6 +13,7 @@ const bcrypt = require('bcryptjs');
 const { createLead, listLeads, setLeadHandled, createTicket, leadsToCsv } = require('./lib/db');
 const { sendLeadEmails, sendTicketEmails } = require('./lib/mail');
 const { contactSchema, ticketSchema, loginSchema, parse } = require('./lib/validate');
+const { runKat } = require('./lib/kat');
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
@@ -106,6 +107,14 @@ const loginLimiter = rateLimit({
   message: { error: 'Too many login attempts. Try again later.' },
 });
 
+const katLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Kat is getting a lot of questions — try again in a moment.' },
+});
+
 app.use(express.static(PUBLIC, { extensions: ['html'] }));
 
 function requireAdmin(req, res, next) {
@@ -115,6 +124,27 @@ function requireAdmin(req, res, next) {
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
+});
+
+app.post('/api/kat', katLimiter, async (req, res, next) => {
+  try {
+    const message = String(req.body?.message || '').trim();
+    if (!message) {
+      const err = new Error('Please type a message for Kat.');
+      err.status = 400;
+      throw err;
+    }
+    if (message.length > 800) {
+      const err = new Error('Message is too long (max 800 characters).');
+      err.status = 400;
+      throw err;
+    }
+    const history = Array.isArray(req.body?.history) ? req.body.history : [];
+    const result = await runKat({ message, history });
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.get('/api/posts', (_req, res, next) => {
