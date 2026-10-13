@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact & Support — Refine ICT</title>
+<meta name="description" content="Request a quote or open a support ticket with Refine ICT. We reply within one business day.">
+<link rel="canonical" href="https://refineict.co.za/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact & Support — Refine ICT">
+<meta property="og:description" content="Request a quote or open a support ticket. We reply within one business day.">
+<meta property="og:url" content="https://refineict.co.za/contact.html">
+<meta property="og:image" content="https://refineict.co.za/img/contact-bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact & Support — Refine ICT">
+<meta name="twitter:description" content="Request a quote or open a support ticket.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    var t = localStorage.getItem('theme');
+    if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+  <div class="page-hero page-hero--bg">
+    <div class="page-hero-bg" aria-hidden="true">
+      <picture>
+        <source srcset="/img/contact-bg.webp" type="image/webp">
+        <img src="/img/contact-bg.jpg" alt="" width="1024" height="559" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="page-hero-inner">
+      <p class="hero-brand">Refine ICT</p>
+      <h1>Contact</h1>
+      <p class="lead" id="contact-intro"></p>
+    </div>
+  </div>
+  <section class="sec contact">
+    <div>
+      <h2>Get a quote</h2>
+      <address id="contact-info"></address>
+    </div>
+    <form id="form" novalidate>
+      <label for="name">Name<input id="name" name="name" required autocomplete="name"></label>
+      <label for="email">Email<input id="email" name="email" type="email" required autocomplete="email"></label>
+      <label for="phone">Phone<input id="phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label for="service-select">Service<select name="service" id="service-select"></select></label>
+      <label for="message">How can we help?<textarea id="message" name="message" rows="4" required minlength="10"></textarea></label>
+      <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Send request</button>
+      <p id="form-msg" class="form-msg" role="status"></p>
+    </form>
+  </section>
+  <section class="sec map-sec" id="location" aria-labelledby="map-title">
+    <div class="map-sec-head">
+      <h2 id="map-title">Find us</h2>
+      <p class="lead" id="map-address"></p>
+      <a class="btn btn-ghost" id="map-directions" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+    </div>
+    <div class="map-frame">
+      <iframe
+        id="office-map"
+        title="Map showing Refine ICT office location"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+  <section class="sec contact">
+    <div>
+      <h2>Support ticket</h2>
+      <p class="lead" id="ticket-intro"></p>
+    </div>
+    <form id="ticket-form" novalidate>
+      <label for="t-name">Name<input id="t-name" name="name" required autocomplete="name"></label>
+      <label for="t-email">Email<input id="t-email" name="email" type="email" required autocomplete="email"></label>
+      <label for="t-phone">Phone<input id="t-phone" name="phone" type="tel" autocomplete="tel"></label>
+      <label for="t-priority">Priority
+        <select id="t-priority" name="priority">
+          <option value="normal">Normal</option>
+          <option value="high">High</option>
+          <option value="critical">Critical — system down</option>
+        </select>
+      </label>
+      <label for="t-subject">Subject<input id="t-subject" name="subject" required maxlength="200"></label>
+      <label for="t-message">Describe the issue<textarea id="t-message" name="message" rows="4" required minlength="10"></textarea></label>
+      <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Open ticket</button>
+      <p id="ticket-msg" class="form-msg" role="status"></p>
+    </form>
+  </section>
+  <section class="sec faq-sec" aria-labelledby="faq-title">
+    <div class="faq-layout">
+      <div class="faq-main">
+        <h2 id="faq-title">FAQ</h2>
+        <div class="faq" id="faq"></div>
+      </div>
+      <figure class="faq-media">
+        <picture>
+          <source srcset="/img/faq.webp" type="image/webp">
+          <img src="/img/faq.png" alt="FAQ: We have answers — general information, support and services" width="1024" height="559" loading="lazy">
+        </picture>
+      </figure>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="/config.js"></script>
+<script src="/js/include.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

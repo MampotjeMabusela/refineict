@@ -1,0 +1,15 @@
+node_modules/
+.env
+data/*.db
+data/*.db-*
+data/leads.json.migrated
+public/img/*.webp.svg
+public/img/logo-baked.png
+public/img/logo-source.png
+public/img/_*.png
+!.gitkeep
+.DS_Store
+coverage/
+*.log
+.vscode/
+.idea/

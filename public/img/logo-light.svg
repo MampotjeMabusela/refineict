@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 56" role="img" aria-label="RefineICT Pty (Ltd).">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe08a"/>
+      <stop offset="45%" stop-color="#ffb020"/>
+      <stop offset="100%" stop-color="#d4890a"/>
+    </linearGradient>
+    <linearGradient id="cobalt" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a3a9e"/>
+      <stop offset="55%" stop-color="#2f5bff"/>
+      <stop offset="100%" stop-color="#6b8cff"/>
+    </linearGradient>
+    <linearGradient id="facet" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".4"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0c1a2e" stop-opacity=".3"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#soft)">
+    <path fill="url(#cobalt)" d="M28 4 L48 16 L48 40 L28 52 L8 40 L8 16 Z"/>
+    <path fill="url(#gold)" d="M28 4 L48 16 L28 28 L8 16 Z" opacity=".95"/>
+    <path fill="#0c1a2e" opacity=".25" d="M28 28 L48 16 L48 40 Z"/>
+    <path fill="url(#facet)" d="M28 4 L48 16 L48 40 L28 52 L8 40 L8 16 Z"/>
+    <path fill="#fff" d="M20.5 18.5h9.2c3.6 0 5.9 1.9 5.9 4.7 0 2.4-1.4 4.1-3.7 4.7l4.6 6.6h-4.2l-4.2-6.1h-3.4v6.1h-4.2V18.5zm4.2 3.2v4.2h4.6c1.5 0 2.4-.8 2.4-2.1s-.9-2.1-2.4-2.1h-4.6z"/>
+    <circle cx="42" cy="12" r="1.4" fill="#ffe08a"/>
+    <circle cx="14" cy="38" r="1" fill="#ffe08a" opacity=".85"/>
+  </g>
+
+  <g font-family="Sora, 'Segoe UI', system-ui, sans-serif">
+    <text x="62" y="28" font-size="22" font-weight="800" letter-spacing="-0.4" fill="#ffffff">RefineICT</text>
+    <text x="62" y="46" font-size="12" font-weight="600" letter-spacing="0.8" fill="#ffb020">Pty (Ltd).</text>
+  </g>
+  <rect x="62" y="32" width="28" height="2" rx="1" fill="url(#gold)"/>
+</svg>

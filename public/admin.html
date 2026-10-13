@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin — Leads</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    var t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main" class="admin-wrap">
+  <h1>Lead inbox</h1>
+  <p class="muted">Sign in to search, mark handled, and export CSV.</p>
+
+  <section id="login-panel">
+    <form id="login-form" style="max-width:420px;margin-top:1.5rem">
+      <label for="username">Username<input id="username" name="username" required autocomplete="username"></label>
+      <label for="password">Password<input id="password" name="password" type="password" required autocomplete="current-password"></label>
+      <button class="btn" type="submit">Sign in</button>
+      <p id="login-msg" class="form-msg" role="status"></p>
+    </form>
+  </section>
+
+  <section id="app-panel" hidden>
+    <div class="admin-toolbar">
+      <label for="q">Search
+        <input id="q" type="search" placeholder="Name, email, service…">
+      </label>
+      <label for="handled">Status
+        <select id="handled">
+          <option value="">All</option>
+          <option value="0">Open</option>
+          <option value="1">Handled</option>
+        </select>
+      </label>
+      <button class="btn btn-sm" type="button" id="refresh">Refresh</button>
+      <a class="btn btn-sm btn-ghost" id="export" href="/api/admin/leads.csv">Export CSV</a>
+      <button class="btn btn-sm btn-ghost" type="button" id="logout">Sign out</button>
+    </div>
+    <div style="overflow:auto">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>When</th><th>Name</th><th>Contact</th><th>Service</th><th>Message</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p id="list-msg" class="form-msg" role="status"></p>
+  </section>
+</main>
+<script src="/js/admin.js"></script>
+</body>
+</html>

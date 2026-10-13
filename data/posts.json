@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "load-shedding-and-your-network",
+    "title": "Load-shedding survival for small IT estates",
+    "date": "2026-09-12",
+    "excerpt": "A practical checklist: UPS sizing, graceful shutdowns, and what to monitor when the grid drops again.",
+    "tags": ["infrastructure", "continuity"]
+  },
+  {
+    "slug": "popia-basics-for-smes",
+    "title": "POPIA basics your managers can actually follow",
+    "date": "2026-08-28",
+    "excerpt": "Access control, retention and breach response without drowning the team in legalese.",
+    "tags": ["security", "compliance"]
+  },
+  {
+    "slug": "when-to-move-to-microsoft-365",
+    "title": "Signs it is time to move to Microsoft 365",
+    "date": "2026-07-15",
+    "excerpt": "Five operational signals that a shared drive and on-prem Exchange are costing more than they save.",
+    "tags": ["cloud", "productivity"]
+  },
+  {
+    "slug": "backup-tests-nobody-runs",
+    "title": "The backup test nobody schedules — until it is too late",
+    "date": "2026-06-03",
+    "excerpt": "Why restore drills matter more than backup logos on a slide deck, and how we run them quarterly.",
+    "tags": ["backup", "disaster-recovery"]
+  }
+]
