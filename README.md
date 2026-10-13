@@ -57,6 +57,24 @@ docker compose up --build -d
 
 Data persists in the `nexora-data` volume.
 
+## Deploy on Vercel (GitHub)
+
+1. Push to GitHub (already linked: `MampotjeMabusela/refineict`).
+2. In [Vercel](https://vercel.com) → **Add New Project** → Import that repo.
+3. Framework Preset: **Other** (uses `vercel.json` + `api/index.js`).
+4. Set **Node.js 22.x** (Project Settings → General).
+5. Add environment variables (Production + Preview):
+
+| Variable | Example |
+|---|---|
+| `NODE_ENV` | `production` |
+| `SESSION_SECRET` | long random string |
+| `ADMIN_USER` | `admin` |
+| `ADMIN_PASSWORD` or `ADMIN_PASSWORD_HASH` | strong password / bcrypt hash |
+| `CORS_ORIGIN` | `https://your-project.vercel.app` (update after first deploy) |
+
+6. Deploy. Quote “Send request” still opens WhatsApp. Support tickets/admin SQLite on Vercel is **ephemeral** (`/tmp`) — fine for demos; use a VPS or a hosted DB for lasting ticket storage.
+
 ## Deploy on a VPS (Nginx + PM2 + Let's Encrypt)
 
 1. Point DNS A record at the server.

@@ -19,7 +19,13 @@ const PORT = Number(process.env.PORT || 3000);
 const PUBLIC = path.join(__dirname, 'public');
 const IS_PROD = process.env.NODE_ENV === 'production';
 
-const ALLOWED_ORIGIN = process.env.CORS_ORIGIN || `http://localhost:${PORT}`;
+const ALLOWED_ORIGIN =
+  process.env.CORS_ORIGIN ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : `http://localhost:${PORT}`);
 
 app.set('trust proxy', 1);
 
@@ -44,12 +50,23 @@ app.use(
   })
 );
 
+function isAllowedOrigin(origin) {
+  if (!origin) return true;
+  if (origin === ALLOWED_ORIGIN) return true;
+  if (origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) return true;
+  try {
+    const host = new URL(origin).hostname;
+    if (host.endsWith('.vercel.app')) return true;
+  } catch {
+    return false;
+  }
+  return false;
+}
+
 app.use(
   cors({
     origin(origin, cb) {
-      if (!origin || origin === ALLOWED_ORIGIN || origin.startsWith('http://localhost')) {
-        return cb(null, true);
-      }
+      if (isAllowedOrigin(origin)) return cb(null, true);
       return cb(new Error('Not allowed by CORS'));
     },
     credentials: true,
