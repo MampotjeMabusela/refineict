@@ -938,11 +938,9 @@ textarea { min-height: 7rem; resize: vertical; }
     bottom: calc(4.25rem + env(safe-area-inset-bottom));
     right: max(0.85rem, env(safe-area-inset-right));
   }
-  body.has-kat .kat-launcher {
+  body.has-kat .kat-launcher,
+  body.has-kat .kat-panel {
     bottom: calc(4.25rem + env(safe-area-inset-bottom));
-  }
-  body.has-kat .wa-float {
-    bottom: calc(8.6rem + env(safe-area-inset-bottom));
   }
   body.has-kat .kat-panel {
     bottom: calc(8.4rem + env(safe-area-inset-bottom));
@@ -1079,14 +1077,11 @@ textarea { min-height: 7rem; resize: vertical; }
   border: 0;
 }
 
-/* Kat — site assistant */
-body.has-kat .wa-float {
-  bottom: max(5.25rem, calc(4.25rem + env(safe-area-inset-bottom)));
-}
-
+/* Kat — site assistant (left); WhatsApp stays on the right */
 .kat-launcher {
   position: fixed;
-  right: max(1rem, env(safe-area-inset-right));
+  left: max(1rem, env(safe-area-inset-left));
+  right: auto;
   bottom: max(1rem, env(safe-area-inset-bottom));
   z-index: 40;
   display: inline-flex;
@@ -1122,7 +1117,8 @@ body.has-kat .wa-float {
 
 .kat-panel {
   position: fixed;
-  right: max(1rem, env(safe-area-inset-right));
+  left: max(1rem, env(safe-area-inset-left));
+  right: auto;
   bottom: max(5rem, calc(4.5rem + env(safe-area-inset-bottom)));
   z-index: 45;
   width: min(24.5rem, calc(100vw - 1.5rem));
@@ -1268,10 +1264,14 @@ body.has-kat .wa-float {
 
 @media (max-width: 480px) {
   .kat-launcher-label { display: none; }
-  .kat-launcher { padding: 0.55rem; border-radius: 50%; }
+  .kat-launcher {
+    padding: 0.55rem;
+    border-radius: 50%;
+    left: max(0.85rem, env(safe-area-inset-left));
+  }
   .kat-panel {
-    right: 0.65rem;
     left: 0.65rem;
+    right: 0.65rem;
     width: auto;
     bottom: max(4.75rem, calc(4.25rem + env(safe-area-inset-bottom)));
     height: min(70dvh, 32rem);

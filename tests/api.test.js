@@ -86,7 +86,7 @@ describe('API', () => {
 
     const about = await request(app).post('/api/kat').send({ message: 'What is your phone number?' });
     assert.equal(about.status, 200);
-    assert.match(String(about.body.reply), /72 614|hello@refineict|WhatsApp/i);
+    assert.match(String(about.body.reply), /082 978 7832|mattheomt@refineict\.com|WhatsApp/i);
   });
 
   it('POST /api/kat validates empty message', async () => {

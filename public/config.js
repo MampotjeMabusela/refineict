@@ -5,9 +5,9 @@ window.SITE = {
   tagline: 'Technology that keeps your business running.',
   logo: '/img/logo.png',
   logoDark: '/img/logo.png', // same lockup works on light & dark (navy plate + white type)
-  email: 'hello@refineict.co.za',
-  phone: '+27 72 614 1568',
-  whatsapp: '+27726141568',
+  email: 'mattheomt@refineict.com',
+  phone: '082 978 7832',
+  whatsapp: '+27829787832',
   address: '154 Amethyst Drive, Pebble Rock Golf Estate, Roodeplaat, Pretoria, 0039, Gauteng, South Africa',
   hours: 'Mon–Fri 08:00–17:00 · Emergency support 24/7',
   map: {
