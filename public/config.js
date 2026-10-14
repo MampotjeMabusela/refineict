@@ -282,8 +282,11 @@ window.SITE = {
   ],
   testimonials: [],
   about: {
-    title: 'About Us — Refine ICT',
-    lead: 'Advancing the Frontiers of Global Connectivity',
+    title: 'About Us',
+    lead: '',
+    leaderTitle: 'Mattheo Moloele: Managing Director',
+    leaderBio:
+      'Mattheo is the Managing Director of Refine ICT (Pty) Ltd. He holds a BTech Degree in Financial Accounting, an MBA in Financial Management and Strategy, and an LLB. He brings extensive experience in both finance and information technology (IT), combining strong financial management expertise with technical knowledge and strategic leadership. His multidisciplinary background enables him to provide effective leadership, drive business growth, strengthen financial governance, and oversee the delivery of innovative ICT solutions that meet clients’ business needs.',
     points: [
       'Deliver Excellence: high-performance IT infrastructure and software tailored to strategic goals',
       'Empower Innovation: cloud, networking and modern platforms that create competitive edge',

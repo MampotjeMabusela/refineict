@@ -487,6 +487,10 @@ function pageInit() {
   if (aboutTitle) aboutTitle.textContent = S.about.title;
   const aboutLead = $('about-lead');
   if (aboutLead) aboutLead.textContent = S.about.lead;
+  const aboutLeaderTitle = $('about-leader-title');
+  if (aboutLeaderTitle) aboutLeaderTitle.textContent = S.about.leaderTitle || '';
+  const aboutLeaderBio = $('about-leader-bio');
+  if (aboutLeaderBio) aboutLeaderBio.textContent = S.about.leaderBio || '';
   const aboutPoints = $('about-points');
   if (aboutPoints) aboutPoints.innerHTML = S.about.points.map((p) => `<li>${p}</li>`).join('');
   const aboutStory = $('about-story');
