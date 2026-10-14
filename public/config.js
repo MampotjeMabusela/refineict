@@ -3,20 +3,14 @@ window.SITE = {
   name: 'Refine ICT',
   legalName: 'RefineICT Pty (Ltd).', // header & footer only
   registrationNumber: '2024/130026/07',
-  tagline: 'Technology that keeps your business running.',
+  tagline: 'Advancing the frontiers of global connectivity',
   logo: '/img/logo.png',
   logoDark: '/img/logo.png', // same lockup works on light & dark (navy plate + white type)
   email: 'mattheomt@refineict.com',
   phone: '082 978 7832',
   whatsapp: '+27829787832',
-  address: '154 Amethyst Drive, Pebble Rock Golf Estate, Roodeplaat, Pretoria, 0039, Gauteng, South Africa',
+  address: 'Gauteng, South Africa.',
   hours: 'Mon–Fri 08:00–17:00 · Emergency support 24/7',
-  map: {
-    lat: -25.6088,
-    lng: 28.3865,
-    zoom: 15,
-    label: 'Refine ICT — 154 Amethyst Drive, Pebble Rock Golf Estate',
-  },
   url: 'https://refineict.co.za',
   heroLead:
     "Fixed-price IT support, cloud, security and software for businesses that can't afford downtime.",
@@ -32,7 +26,7 @@ window.SITE = {
       src: 'img/hero-bg.webp',
       fallback: 'img/hero-bg.jpg',
       w: 2560,
-      h: 1440,
+      h: 1398,
       alt: 'Refine ICT — advancing the frontiers of global connectivity',
     },
     hero: { src: 'img/hero.webp', w: 1800, h: 1350, alt: 'Server infrastructure managed by our engineers' },

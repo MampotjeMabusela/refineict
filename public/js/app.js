@@ -26,29 +26,6 @@ const PARTNER_SVG = {
   veeam: '<path d="M4 16l4-10h3l4 10M9 16h10" fill="none" stroke="currentColor" stroke-width="1.8"/>',
 };
 
-function renderOfficeMap() {
-  const frame = $('office-map');
-  if (!frame || !S.map) return;
-  const { lat, lng, label } = S.map;
-  const query = encodeURIComponent(S.address || label || `${lat},${lng}`);
-  const pad = 0.012;
-  const bbox = [lng - pad, lat - pad, lng + pad, lat + pad].map((n) => n.toFixed(5)).join('%2C');
-  // OpenStreetMap embed (no API key) — Google link used for directions
-  frame.src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
-  frame.setAttribute(
-    'title',
-    label ? `Map showing ${label}` : 'Map showing Refine ICT office location'
-  );
-
-  const addr = $('map-address');
-  if (addr) addr.textContent = S.address || label || '';
-
-  const directions = $('map-directions');
-  if (directions) {
-    directions.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
-  }
-}
-
 function setImg(el, key) {
   if (!el || !S.images[key]) return;
   const { src, w, h, alt, fallback } = S.images[key];
@@ -428,7 +405,8 @@ function applySeoJsonLd(extra) {
         telephone: S.phone,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: S.address,
+          addressRegion: 'Gauteng',
+          addressCountry: 'ZA',
         },
         description: S.tagline,
       },
@@ -528,8 +506,6 @@ function pageInit() {
       <a href="tel:${S.phone.replace(/\s/g, '')}">${S.phone}</a>
       <span>${S.hours}</span>`;
   }
-
-  renderOfficeMap();
 
   const contactIntro = $('contact-intro');
   if (contactIntro) contactIntro.textContent = S.contactIntro;

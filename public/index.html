@@ -32,38 +32,22 @@
 <div id="site-header"></div>
 
 <main id="main">
-<section class="hero hero--cinema" id="hero">
+<section class="hero hero--cinema hero--branded-art" id="hero">
   <div class="hero-bg" aria-hidden="true">
     <picture>
       <source id="hero-bg-webp" type="image/webp">
-      <img id="img-hero" alt="" width="2560" height="1440" fetchpriority="high">
+      <img id="img-hero" alt="" width="2560" height="1398" fetchpriority="high">
     </picture>
   </div>
   <div class="hero-content">
     <div class="hero-text">
-      <p class="hero-brand" id="hero-brand"></p>
-      <h1 id="h-tagline"></h1>
+      <p class="hero-brand visually-hidden" id="hero-brand"></p>
+      <h1 class="visually-hidden" id="h-tagline"></h1>
       <p id="h-lead"></p>
       <div class="cta">
         <a href="/contact.html" class="btn" id="cta-assess"></a>
         <a href="/services.html" class="btn btn-ghost btn-ghost-light" id="cta-services"></a>
       </div>
-    </div>
-    <div class="hero-visual hero-visual--overlay" aria-hidden="true">
-      <svg class="topo" viewBox="0 0 400 300">
-        <g stroke="#7fa2ff" stroke-width="1.2" fill="none" opacity=".7">
-          <path d="M60 220 L150 120 L260 170 L340 70"/>
-          <path d="M150 120 L200 40 L260 170"/>
-          <path d="M60 220 L260 170"/>
-        </g>
-        <g fill="#fff">
-          <circle cx="60" cy="220" r="6"/><circle cx="150" cy="120" r="6"/>
-          <circle cx="260" cy="170" r="6"/><circle cx="340" cy="70" r="6"/>
-          <circle cx="200" cy="40" r="6"/>
-        </g>
-        <circle class="pulse" cx="150" cy="120" r="6"/>
-      </svg>
-      <div class="status"><i></i> <span id="status-line"></span></div>
     </div>
   </div>
 </section>
@@ -122,23 +106,6 @@
 <section class="sec" id="news">
   <h2>Latest news</h2>
   <div class="grid" id="posts"></div>
-</section>
-
-<section class="sec contact" id="contact">
-  <div>
-    <h2>Tell us what you need</h2>
-    <p class="lead" id="contact-intro"></p>
-  </div>
-  <form id="form" novalidate>
-    <label for="name">Name<input id="name" name="name" required autocomplete="name"></label>
-    <label for="email">Email<input id="email" name="email" type="email" required autocomplete="email"></label>
-    <label for="phone">Phone<input id="phone" name="phone" type="tel" autocomplete="tel"></label>
-    <label for="service-select">Service<select name="service" id="service-select"></select></label>
-    <label for="message">How can we help?<textarea id="message" name="message" rows="4" required minlength="10"></textarea></label>
-    <input name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <button class="btn" type="submit">Send request</button>
-    <p id="form-msg" class="form-msg" role="status"></p>
-  </form>
 </section>
 </main>
 
