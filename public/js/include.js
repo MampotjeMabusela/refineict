@@ -16,12 +16,12 @@
       ? `<span class="brand-reg">${S.registrationNumber}</span>`
       : '';
     if (!S.logo) {
-      return `<span class="brand-lockup"><span class="mark" aria-hidden="true">R</span><span>${label}</span>${reg}</span>`;
+      return `<span class="brand-lockup"><a href="/index.html" class="brand-home" aria-label="${label} — home"><span class="mark" aria-hidden="true">R</span><span>${label}</span></a>${reg}</span>`;
     }
     const theme = document.documentElement.getAttribute('data-theme');
     const useLight = onDark || theme === 'dark';
     const src = useLight && S.logoDark ? S.logoDark : S.logo;
-    return `<span class="brand-lockup"><img class="brand-logo" src="${src}?v=14" alt="${label}" width="320" height="100">${reg}</span>`;
+    return `<span class="brand-lockup"><a href="/index.html" class="brand-home" aria-label="${label} — home"><img class="brand-logo" src="${src}?v=14" alt="${label}" width="320" height="100"></a>${reg}</span>`;
   }
 
   function navLinks() {
@@ -39,7 +39,7 @@
     if (!el) return;
     el.outerHTML = `
 <header class="nav" id="nav">
-  <a href="/index.html" class="brand" id="brand">${brandHtml(false)}</a>
+  <div class="brand" id="brand">${brandHtml(false)}</div>
   <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
     <span></span><span></span>
   </button>
@@ -61,7 +61,7 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
-      <a href="/index.html" class="brand">${brandHtml(true)}</a>
+      <div class="brand">${brandHtml(true)}</div>
       <p class="footer-tag">${S.tagline}</p>
     </div>
     <div>
