@@ -82,7 +82,7 @@ describe('API', () => {
     assert.equal(pricing.body.agent, 'Theo');
     assert.ok(pricing.body.reply);
     assert.ok(pricing.body.navigate);
-    assert.match(pricing.body.navigate.href, /plans|#pricing|services/i);
+    assert.match(pricing.body.navigate.href, /contact\.html/i);
 
     const about = await request(app).post('/api/kat').send({ message: 'What is your phone number?' });
     assert.equal(about.status, 200);

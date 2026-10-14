@@ -494,9 +494,15 @@ function pageInit() {
 
   const quotes = $('quotes');
   if (quotes) {
-    quotes.innerHTML = S.testimonials
-      .map((t) => `<blockquote>“${t.quote}”<cite>${t.author}</cite></blockquote>`)
-      .join('');
+    const list = S.testimonials || [];
+    if (!list.length) {
+      quotes.hidden = true;
+    } else {
+      quotes.hidden = false;
+      quotes.innerHTML = list
+        .map((t) => `<blockquote>“${t.quote}”<cite>${t.author}</cite></blockquote>`)
+        .join('');
+    }
   }
 
   const aboutTitle = $('about-title');

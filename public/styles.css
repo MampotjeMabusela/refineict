@@ -141,6 +141,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   min-width: 0;
   flex: 1 1 auto;
 }
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 0;
+  width: fit-content;
+  max-width: 100%;
+}
 .brand img, .brand-logo {
   height: clamp(60px, 15vw, 96px);
   width: auto;
@@ -152,11 +161,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   /* Drop navy plate into matching chrome — only teal mark + white type remain */
   mix-blend-mode: lighten;
 }
+.brand-reg {
+  display: block;
+  box-sizing: border-box;
+  /* Center under Refine / ICT / Pty Ltd (wordmark sits to the right of the icon) */
+  margin-left: 30%;
+  width: 70%;
+  text-align: center;
+  font: 500 0.68rem/1.2 "Source Sans 3", system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  color: rgba(215, 226, 245, 0.72);
+  white-space: nowrap;
+}
 .site-footer .brand-logo {
   height: clamp(72px, 17vw, 112px);
   max-width: min(400px, 88vw);
   background: transparent;
   mix-blend-mode: lighten;
+}
+.site-footer .brand-reg {
+  color: rgba(185, 198, 224, 0.75);
 }
 .mark {
   width: 36px; height: 36px; border-radius: 10px;
@@ -687,6 +711,28 @@ textarea { min-height: 7rem; resize: vertical; }
   background: var(--hero-grad);
 }
 .page-hero .lead { margin-bottom: 0; }
+
+.about-prose { max-width: 52rem; }
+.about-prose + .about-prose { padding-top: 0; }
+.about-prose p {
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+  line-height: 1.65;
+  max-width: 48rem;
+}
+.about-prose h2 { margin-bottom: 1rem; }
+.about-prose h3 {
+  font: 700 1.1rem Sora, sans-serif;
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+}
+.about-service-list {
+  display: grid;
+  gap: 1.5rem;
+}
+.about-service-list article p { margin-bottom: 0; }
+.about-prose .ticks li { font-weight: 500; }
+.about-prose .ticks strong { font-weight: 700; color: var(--ink); }
 
 .page-hero--bg {
   position: relative;

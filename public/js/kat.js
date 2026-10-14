@@ -153,7 +153,7 @@
         history.forEach((m) => {
           addBubble(m.role === 'assistant' ? 'assistant' : 'user', formatReply(m.content));
         });
-        renderSuggestions(['Services', 'Pricing', 'Contact', 'Office map']);
+        renderSuggestions(['Services', 'Get a quote', 'Contact', 'Office map']);
         return;
       }
       addBubble(
@@ -162,7 +162,7 @@
           "Hi — I'm **Theo**. Ask me anything about Refine ICT, or tell me where to take you (services, pricing, contact, map, a specific service…)."
         )
       );
-      renderSuggestions(['Show services', 'Pricing plans', 'Contact & quote', 'Office location', 'Cybersecurity']);
+      renderSuggestions(['Show services', 'Get a quote', 'Contact & quote', 'Office location', 'Cybersecurity']);
     }
 
     async function ask(text) {

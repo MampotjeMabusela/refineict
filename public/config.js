@@ -2,6 +2,7 @@
 window.SITE = {
   name: 'Refine ICT',
   legalName: 'RefineICT Pty (Ltd).', // header & footer only
+  registrationNumber: '2024/130026/07',
   tagline: 'Technology that keeps your business running.',
   logo: '/img/logo.png',
   logoDark: '/img/logo.png', // same lockup works on light & dark (navy plate + white type)
@@ -22,7 +23,7 @@ window.SITE = {
   statusLine: 'All client systems operational',
   stats: [
     { value: 12, suffix: '+', label: 'Years in business' },
-    { value: 350, suffix: '+', label: 'Clients supported' },
+    { value: 10, suffix: '+', label: 'Clients supported' },
     { value: 99.9, suffix: '%', label: 'Uptime delivered' },
     { value: 15, suffix: ' min', label: 'Average response time' },
   ],
@@ -193,6 +194,29 @@ window.SITE = {
       },
     },
     {
+      slug: 'project-management',
+      title: 'Project Management',
+      short:
+        'End-to-end IT and business project delivery — scoped, scheduled, risk-managed and reported until go-live.',
+      description:
+        'Refine ICT runs technology and business projects from kick-off to handover so your team stays focused on the work, not the chaos. We define scope and success criteria, build realistic timelines and budgets, coordinate vendors and internal stakeholders, track risks and issues, and report progress in plain language. Whether you are migrating to the cloud, rolling out new hardware, implementing cybersecurity controls, launching a software build, or standing up a multi-site network, we apply practical project controls — initiation, planning, execution, monitoring and close-out — with clear RACI, change control and acceptance criteria. You get a named project lead, documented milestones, and a calm delivery path that protects deadlines, cost and quality.',
+      features: [
+        'Project charter, scope & success criteria',
+        'Schedules, budgets & resource planning',
+        'Risk, issue & change control',
+        'Vendor & stakeholder coordination',
+        'Status reporting & steering packs',
+        'Go-live readiness & formal handover',
+      ],
+      heroImage: {
+        src: '/img/service-project-management.webp',
+        fallback: '/img/service-project-management.jpg',
+        w: 2560,
+        h: 1440,
+        alt: 'Project Management — scoped delivery, schedules, risk control and go-live handover',
+      },
+    },
+    {
       slug: 'hardware-procurement',
       title: 'Hardware & Procurement',
       short: 'Laptops, servers and peripherals supplied, configured and warrantied.',
@@ -254,36 +278,30 @@ window.SITE = {
     },
   ],
   process: [
-    { title: 'Assess', text: 'We audit your systems, risks and goals.' },
-    { title: 'Plan', text: 'You get a clear scope, timeline and fixed pricing.' },
-    { title: 'Deliver', text: 'We implement with minimal disruption to your team.' },
-    { title: 'Support', text: 'We monitor, maintain and improve — continuously.' },
-  ],
-  testimonials: [
+    { title: 'Assess', text: 'We assess your current environment and develop URS.' },
+    { title: 'Plan', text: 'We develop project plans with clear deliverables, timelines and aligned pricing.' },
+    { title: 'Deliver', text: 'We deliver, while transferring skills to your team.' },
     {
-      quote: 'Our downtime dropped to almost zero within a quarter. They answer faster than any provider we have used.',
-      author: 'Mampotje M., Operations Director',
-    },
-    {
-      quote: 'The cloud migration was finished over a weekend. On Monday nobody noticed — which is exactly what we wanted.',
-      author: 'Mattheo M., CEO',
+      title: 'Support',
+      text: 'Upon completion of the project, we will provide 30 days of complimentary support and maintenance to ensure the stability of the environment and facilitate a smooth transition to normal operations.',
     },
   ],
+  testimonials: [],
   about: {
-    title: 'Engineers who treat your systems as their own',
-    lead: 'We are a team of certified engineers, developers and security specialists. We explain things in plain language, price everything upfront and answer the phone.',
+    title: 'About Us — Refine ICT',
+    lead: 'Advancing the Frontiers of Global Connectivity',
     points: [
-      'Certified Microsoft, AWS, Cisco and Fortinet specialists',
-      '24/7 monitoring with a 15-minute response target',
-      'POPIA-aware security and compliance built in',
-      'No lock-in contracts — month-to-month available',
+      'Deliver Excellence: high-performance IT infrastructure and software tailored to strategic goals',
+      'Empower Innovation: cloud, networking and modern platforms that create competitive edge',
+      'Ensure Reliability & Security: cybersecurity, integration and proactive managed services',
+      'Build Lasting Partnerships: transparent communication, agile delivery and dedicated support',
     ],
     securityTitle: 'Security that works while you sleep',
     securityLead:
       'Layered protection: next-gen firewalls, endpoint detection, email filtering, vulnerability scans and quarterly penetration tests, all reported in one dashboard.',
     securityCta: 'Book a security review',
     story:
-      'Founded in Pretoria, Refine ICT grew from a two-engineer support desk into a full-stack technology partner for SMEs and mid-market teams across Gauteng and beyond. We still answer the phone ourselves.',
+      'Refine ICT is a full-service ICT partner specialising in cloud solutions, network infrastructure, IT consulting, software engineering and managed services. We bridge complex technology challenges and seamless business operations so organisations can operate efficiently, securely and without boundaries.',
   },
   industries: [
     { title: 'Professional services', text: 'Law, accounting and consulting firms that need secure collaboration and audit-ready records.' },
@@ -307,20 +325,8 @@ window.SITE = {
       a: 'Business-plan clients get a 15-minute response target during business hours for priority issues. Enterprise includes after-hours coverage with the same target for P1 incidents.',
     },
     {
-      q: 'Do you lock us into long contracts?',
-      a: 'No. Month-to-month is available. Most clients choose 12-month agreements for a better rate, but you can leave with 30 days’ notice after the initial term.',
-    },
-    {
-      q: 'Can you work with our existing vendors?',
-      a: 'Yes. We often become the single throat to choke — coordinating ISPs, software vendors and hardware warranties so your team has one place to call.',
-    },
-    {
       q: 'Are you POPIA aware?',
       a: 'Yes. We design access control, backup and incident processes with POPIA in mind and can support your Information Officer with practical controls and documentation.',
-    },
-    {
-      q: 'Do you only work in Pretoria?',
-      a: 'Our base is Pretoria / Gauteng. We support remote clients nationally and arrange on-site engineers for other metros when needed.',
     },
   ],
   plans: [
@@ -379,7 +385,8 @@ window.SITE = {
   contactIntro: 'We reply within one business day — usually within the hour.',
   servicesIntro: 'One team for support, security, cloud and software — so nothing falls between suppliers.',
   industriesIntro: 'Practical IT for teams that need systems to work on Monday morning — not slide decks.',
-  partnersIntro: 'Technology alliances our engineers work with every day.',
+  partnersIntro:
+    'The company has an established alliance with a partner that possesses the required certifications, qualifications, and technical expertise to deliver the services.',
   plansIntro: 'Transparent monthly pricing. Scale up when you are ready.',
   casesIntro: 'Outcomes our clients care about: uptime, calm Mondays, fewer tickets.',
   assessmentCta: 'Get a free IT assessment',
@@ -397,7 +404,7 @@ window.SITE = {
       'Managed IT, cybersecurity, cloud, networking, backup, software development and more.',
     aboutTitle: 'About Us',
     aboutDescription:
-      'Certified engineers delivering managed IT, cloud and cybersecurity without the jargon.',
+      'Advancing the frontiers of global connectivity with cloud, network, software, cybersecurity and managed ICT services.',
     contactTitle: 'Contact & Support',
     contactDescription: 'Request a quote or open a support ticket. We reply within one business day.',
   },

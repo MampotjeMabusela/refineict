@@ -12,13 +12,16 @@
 
   function brandHtml(onDark) {
     const label = brandLabel();
+    const reg = S.registrationNumber
+      ? `<span class="brand-reg">${S.registrationNumber}</span>`
+      : '';
     if (!S.logo) {
-      return `<span class="mark" aria-hidden="true">R</span><span>${label}</span>`;
+      return `<span class="brand-lockup"><span class="mark" aria-hidden="true">R</span><span>${label}</span>${reg}</span>`;
     }
     const theme = document.documentElement.getAttribute('data-theme');
     const useLight = onDark || theme === 'dark';
     const src = useLight && S.logoDark ? S.logoDark : S.logo;
-    return `<img class="brand-logo" src="${src}?v=14" alt="${label}" width="320" height="100">`;
+    return `<span class="brand-lockup"><img class="brand-logo" src="${src}?v=14" alt="${label}" width="320" height="100">${reg}</span>`;
   }
 
   function navLinks() {
@@ -65,7 +68,6 @@
       <h2 class="footer-h">Contact</h2>
       <p><a href="mailto:${S.email}">${S.email}</a></p>
       <p><a href="tel:${S.phone.replace(/\s/g, '')}">${S.phone}</a></p>
-      <p>${S.address}</p>
       <p class="muted">${S.hours}</p>
     </div>
     <div>
