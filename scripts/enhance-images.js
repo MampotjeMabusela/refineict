@@ -12,6 +12,9 @@ const STAGING = path.join(IMG, '_enhanced_staging');
 const JOBS = [
   { base: 'hero-bg', webp: true, fallback: 'jpg', targetW: 2560, fit: 'inside' },
   { base: 'contact-bg', webp: true, fallback: 'jpg', targetW: 2560, fit: 'inside' },
+  { base: 'about-bg', webp: true, fallback: 'jpg', targetW: 2560, fit: 'inside' },
+  { base: 'contact-cloud', webp: true, fallback: 'jpg', targetW: 1920, fit: 'inside' },
+  { base: 'services-bg', webp: true, fallback: 'jpg', targetW: 3200, fit: 'inside' },
   { base: 'about', webp: true, fallback: 'png', targetW: 2400, fit: 'inside' },
   { base: 'security', webp: true, fallback: 'jpg', targetW: 2400, fit: 'inside' },
   { base: 'faq', webp: true, fallback: 'png', targetW: 2400, fit: 'inside' },

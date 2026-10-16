@@ -491,6 +491,32 @@ function pageInit() {
   if (aboutLeaderTitle) aboutLeaderTitle.textContent = S.about.leaderTitle || '';
   const aboutLeaderBio = $('about-leader-bio');
   if (aboutLeaderBio) aboutLeaderBio.textContent = S.about.leaderBio || '';
+
+  const ceo = S.about?.ceo;
+  if (ceo && $('meet-the-ceo')) {
+    const setCeo = (id, v) => {
+      const el = $(id);
+      if (el && v != null) el.textContent = v;
+    };
+    setCeo('ceo-section-title', ceo.sectionTitle || 'Meet the CEO');
+    setCeo('ceo-name', ceo.name || '');
+    setCeo('ceo-role', ceo.role || '');
+    setCeo('ceo-message', ceo.message || '');
+    setCeo('ceo-sign', ceo.name || '');
+    setCeo('ceo-initials', ceo.initials || (ceo.name || '').split(/\s+/).map((p) => p[0]).join('').slice(0, 2).toUpperCase());
+    const photo = $('ceo-photo');
+    const fallback = $('ceo-photo-fallback');
+    if (photo && ceo.photo) {
+      photo.src = ceo.photo.startsWith('/') ? ceo.photo : '/' + ceo.photo;
+      photo.alt = ceo.photoAlt || ceo.name || '';
+      photo.hidden = false;
+      if (fallback) fallback.hidden = true;
+    } else if (photo) {
+      photo.hidden = true;
+      if (fallback) fallback.hidden = false;
+    }
+  }
+
   const aboutPoints = $('about-points');
   if (aboutPoints) aboutPoints.innerHTML = S.about.points.map((p) => `<li>${p}</li>`).join('');
   const aboutStory = $('about-story');

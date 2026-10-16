@@ -10,10 +10,11 @@
 <meta property="og:title" content="About Us">
 <meta property="og:description" content="Meet the Refine ICT leadership team and learn how we deliver ICT solutions for modern business.">
 <meta property="og:url" content="https://refineict.co.za/about.html">
-<meta property="og:image" content="https://refineict.co.za/img/about.webp">
+<meta property="og:image" content="https://refineict.co.za/img/about-bg.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About Us">
 <meta name="twitter:description" content="Meet the Refine ICT leadership team and learn how we deliver ICT solutions for modern business.">
+<meta name="twitter:image" content="https://refineict.co.za/img/about-bg.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -30,8 +31,17 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <div id="site-header"></div>
 <main id="main">
-  <div class="page-hero">
-    <h1>About Us</h1>
+  <div class="page-hero page-hero--bg page-hero--branded-art">
+    <div class="page-hero-bg" aria-hidden="true">
+      <picture>
+        <source srcset="/img/about-bg.webp" type="image/webp">
+        <img src="/img/about-bg.jpg" alt="" width="2560" height="1044" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="page-hero-inner">
+      <p class="hero-brand visually-hidden">Refine ICT</p>
+      <h1>About Us</h1>
+    </div>
   </div>
 
   <section class="sec about-prose" id="about-leader">
@@ -63,6 +73,34 @@
       To be a leading force in global ICT, empowering organizations through innovative, resilient, and future-proof technology
       solutions that drive sustainable growth and seamless global connectivity.
     </p>
+  </section>
+
+  <section class="ceo-spotlight" id="meet-the-ceo" aria-labelledby="ceo-section-title">
+    <div class="ceo-spotlight-glow" aria-hidden="true"></div>
+    <div class="ceo-spotlight-inner">
+      <p class="ceo-kicker" id="ceo-section-title"></p>
+      <div class="ceo-stage">
+        <div class="ceo-portrait-wrap">
+          <div class="ceo-portrait-ring" aria-hidden="true"></div>
+          <div class="ceo-portrait-plate">
+            <img id="ceo-photo" class="ceo-photo" alt="" width="640" height="800" hidden>
+            <div id="ceo-photo-fallback" class="ceo-photo-fallback" aria-hidden="true">
+              <span id="ceo-initials"></span>
+              <p>Photo coming soon</p>
+            </div>
+          </div>
+          <div class="ceo-portrait-badge" aria-hidden="true">CEO</div>
+        </div>
+        <div class="ceo-copy">
+          <h2 id="ceo-name"></h2>
+          <p class="ceo-role" id="ceo-role"></p>
+          <blockquote class="ceo-message">
+            <p id="ceo-message"></p>
+          </blockquote>
+          <p class="ceo-signoff">— <span id="ceo-sign"></span></p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="sec about-prose">

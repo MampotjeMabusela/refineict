@@ -52,6 +52,27 @@ window.SITE = {
       h: 1398,
       alt: 'Refine ICT — advancing the frontiers of global connectivity',
     },
+    aboutBg: {
+      src: 'img/about-bg.webp',
+      fallback: 'img/about-bg.jpg',
+      w: 2560,
+      h: 1044,
+      alt: 'Refine ICT engineer working across network and systems monitors',
+    },
+    contactCloud: {
+      src: 'img/contact-cloud.webp',
+      fallback: 'img/contact-cloud.jpg',
+      w: 1920,
+      h: 939,
+      alt: 'Cloud Services — architecture, migration, management, and cost control',
+    },
+    servicesBg: {
+      src: 'img/services-bg.webp',
+      fallback: 'img/services-bg.jpg',
+      w: 3200,
+      h: 2272,
+      alt: 'Refine ICT services overview — managed IT, cloud, support, software, consulting and communications',
+    },
     faq: {
       src: 'img/faq.webp',
       fallback: 'img/faq.png',
@@ -287,6 +308,16 @@ window.SITE = {
     leaderTitle: 'Mattheo Moloele: Managing Director',
     leaderBio:
       'Mattheo is the Managing Director of Refine ICT (Pty) Ltd. He holds a BTech Degree in Financial Accounting, an MBA in Financial Management and Strategy, and an LLB. He brings extensive experience in both finance and information technology (IT), combining strong financial management expertise with technical knowledge and strategic leadership. His multidisciplinary background enables him to provide effective leadership, drive business growth, strengthen financial governance, and oversee the delivery of innovative ICT solutions that meet clients’ business needs.',
+    ceo: {
+      sectionTitle: 'Meet the CEO',
+      name: 'Mattheo Moloele',
+      role: 'Chief Executive Officer',
+      initials: 'MM',
+      photo: '', // add path e.g. '/img/ceo.jpg' when ready
+      photoAlt: 'Mattheo Moloele, Chief Executive Officer of Refine ICT',
+      message:
+        'Technology should never be a barrier to growth — it should be the engine behind it. At Refine ICT, we build partnerships rooted in trust, clarity and measurable outcomes. My commitment is simple: every client receives the same care, urgency and excellence I would demand for my own business. Together, we advance the frontiers of global connectivity — one resilient system, one confident team, one breakthrough at a time.',
+    },
     points: [
       'Deliver Excellence: high-performance IT infrastructure and software tailored to strategic goals',
       'Empower Innovation: cloud, networking and modern platforms that create competitive edge',
